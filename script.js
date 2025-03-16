@@ -17,8 +17,10 @@ $(document).ready(function() {
             $(".heart").removeClass("openHer openedHer").addClass("closeHer");
             $(".container").stop().animate({"backgroundColor": "#fce4ec"}, 2000);
             console.log("Closing");
+            // Ensure the audio is paused when the heart is clicked again
             if (!audio.paused) {
                 audio.pause();
+                audio.currentTime = 0; // Reset audio to the beginning
             }
         }
     });
